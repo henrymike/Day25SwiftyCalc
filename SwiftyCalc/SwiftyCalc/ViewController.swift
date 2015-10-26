@@ -10,29 +10,36 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var testButton :UIButton!
-    @IBOutlet weak var ouputLabel :UILabel!
+    @IBOutlet weak var displayLabel :UILabel!
+    var currentOperator :NSString!
     
-    var leftNumber = 0;
-    var rightNumber = 0;
-    var result = 0;
+    var leftNumber : Float = 0;
+    var rightNumber : Float = 0;
+    var result : Float = 0;
     
     //MARK: - Interactivity Methods
     
-    @IBAction func testButtonPressed(sender: UIButton) {
-        print("Button Pressed")
-    }
+//    @IBAction func testButtonPressed(sender: UIButton) {
+//        print("Button Pressed")
+//    }
     
     @IBAction func buttonClearPressed(sender: UIButton) {
         print("Clear")
+        displayLabel.text = ""
+        leftNumber = 0
+        rightNumber = 0
+        result = 0
     }
     
     @IBAction func button1Pressed(sender: UIButton) {
         print("1")
+        leftNumber = 1
+        
     }
     
     @IBAction func button2Pressed(sender: UIButton) {
         print("2")
+        rightNumber = 2
     }
     
     @IBAction func buttonPlusPressed(sender: UIButton) {
@@ -45,6 +52,8 @@ class ViewController: UIViewController {
     
     @IBAction func buttonEqualsPressed(sender: UIButton) {
         print("=")
+        result = leftNumber + rightNumber
+        displayLabel.text = (String(format: "%f", result))
     }
     
     
@@ -52,6 +61,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentOperator = ""
 
     }
 

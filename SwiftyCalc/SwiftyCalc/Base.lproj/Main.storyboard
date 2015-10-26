@@ -74,7 +74,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="ouputLabel" destination="BfV-2g-JTp" id="USo-xZ-IxP"/>
+                        <outlet property="displayLabel" destination="BfV-2g-JTp" id="gyN-J4-P1z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
