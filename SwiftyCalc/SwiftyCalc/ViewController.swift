@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var leftNumber = 0.0
     var rightNumber = 0.0
     var result = 0.0
+    var didFinishEqual = false
     
     
     //MARK: - Interactivity Methods
@@ -29,10 +30,18 @@ class ViewController: UIViewController {
         rightNumber = 0.0
         result = 0.0
         currentOperator = ""
+        didFinishEqual = false
     }
     
     @IBAction func buttonNumberPressed(sender: UIButton) {
-        print(sender.currentTitle)
+        if didFinishEqual == true {
+            displayLabel.text = ""
+            currentOperator = ""
+            leftNumber = 0
+            rightNumber = 0
+            didFinishEqual = false
+            print("DFE")
+        }
         displayLabel.text = displayLabel.text! + sender.currentTitle!
         print(displayLabel.text)
         if currentOperator == "" {
@@ -91,6 +100,7 @@ class ViewController: UIViewController {
         print(leftNumber, rightNumber)
 //        currentOperator = ""
         displayLabel.text = (String(format: "%f", result))
+        didFinishEqual = true;
     }
     
     func continueOperation() {
