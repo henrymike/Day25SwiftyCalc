@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" red="0.79215686269999996" green="0.79607843140000001" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="1"/>
                                 <connections>
-                                    <action selector="button1Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o5X-6e-eMf"/>
+                                    <action selector="buttonNumberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nJ8-tF-Sab"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LL-Se-PAb">
@@ -29,7 +29,7 @@
                                 <color key="backgroundColor" red="0.79215686269999996" green="0.79607843140000001" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="2"/>
                                 <connections>
-                                    <action selector="button2Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ot9-xH-9ac"/>
+                                    <action selector="buttonNumberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a14-ha-FuB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpC-w6-lLn">
@@ -37,7 +37,7 @@
                                 <color key="backgroundColor" red="0.79215686269999996" green="0.79607843140000001" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="buttonPlusPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ab-Mq-Nyn"/>
+                                    <action selector="buttonOperatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yHa-ty-R1G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4V-ZQ-zMI">
@@ -56,7 +56,7 @@
                                     <action selector="buttonClearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQD-vX-q7E"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfV-2g-JTp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfV-2g-JTp">
                                 <rect key="frame" x="122" y="40" width="155" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -67,7 +67,7 @@
                                 <color key="backgroundColor" red="0.79215686269999996" green="0.79607843140000001" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="-"/>
                                 <connections>
-                                    <action selector="buttonMinusPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f7p-sS-PGC"/>
+                                    <action selector="buttonOperatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LJ8-S6-ivS"/>
                                 </connections>
                             </button>
                         </subviews>

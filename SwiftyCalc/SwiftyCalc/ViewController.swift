@@ -23,17 +23,17 @@ class ViewController: UIViewController {
     
     @IBAction func buttonClearPressed(sender: UIButton) {
         print("Clear")
-        displayLabel.text = "0"
+        displayLabel.text = ""
         leftNumber = 0.0
         rightNumber = 0.0
         result = 0.0
         currentOperator = ""
     }
     
-    @IBAction func button1Pressed(sender: UIButton) {
-        print("1")
-//        leftNumber = 1.0
-        displayLabel.text = String(1)
+    @IBAction func buttonNumberPressed(sender: UIButton) {
+        print(sender.currentTitle)
+        displayLabel.text = displayLabel.text! + sender.currentTitle!
+        print(displayLabel.text)
         if currentOperator == "" {
             leftNumber = Double(displayLabel.text!)!
         } else {
@@ -42,31 +42,22 @@ class ViewController: UIViewController {
         print(leftNumber, rightNumber)
     }
     
-    @IBAction func button2Pressed(sender: UIButton) {
-        print("2")
-//        rightNumber = 2
-        displayLabel.text = String(2)
-        if currentOperator == "" {
-            leftNumber = Double(displayLabel.text!)!
-        } else {
-            rightNumber = Double(displayLabel.text!)!
-        }
+    
+    @IBAction func buttonOperatorPressed(sender: UIButton) {
+        print(sender.currentTitle)
+        currentOperator = sender.currentTitle!
+        displayLabel.text = ""
     }
     
-    @IBAction func buttonPlusPressed(sender: UIButton) {
-        print("+")
-        currentOperator = "+"
-    }
-    
-    @IBAction func buttonMinusPressed(sender: UIButton) {
-        print("-")
-        currentOperator = "-"
-    }
     
     @IBAction func buttonEqualsPressed(sender: UIButton) {
         print("=")
         if currentOperator == "+" {
             result = leftNumber + rightNumber
+            leftNumber = result
+        }
+        if currentOperator == "-" {
+            result = leftNumber - rightNumber
             leftNumber = result
         }
         print(leftNumber, rightNumber)
@@ -79,7 +70,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentOperator = ""
-        displayLabel.text = "0"
+//        displayLabel.text = "0"
 
     }
 
