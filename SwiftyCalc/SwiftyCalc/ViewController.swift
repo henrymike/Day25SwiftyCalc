@@ -12,6 +12,7 @@ import Foundation
 class ViewController: UIViewController {
 
     @IBOutlet weak var displayLabel :UILabel!
+    @IBOutlet weak var equalsButton :UIButton!
     
     var currentOperator = ""
     var leftNumber = 0.0
@@ -58,6 +59,7 @@ class ViewController: UIViewController {
         } else {
          displayLabel.text = ""
         }
+        self.continueOperation()
     }
     
     @IBAction func buttonEqualsPressed(sender: UIButton) {
@@ -65,21 +67,37 @@ class ViewController: UIViewController {
         if currentOperator == "+" {
             result = leftNumber + rightNumber
             leftNumber = result
+            rightNumber = 0
+//            currentOperator = ""
         }
         if currentOperator == "-" {
             result = leftNumber - rightNumber
             leftNumber = result
+            rightNumber = 0
+//            currentOperator = ""
         }
         if currentOperator == "X" {
             result = leftNumber * rightNumber
             leftNumber = result
+            rightNumber = 0
+//            currentOperator = ""
         }
         if currentOperator == "÷" {
             result = leftNumber / rightNumber
             leftNumber = result
+            rightNumber = 0
+//            currentOperator = ""
         }
         print(leftNumber, rightNumber)
+//        currentOperator = ""
         displayLabel.text = (String(format: "%f", result))
+    }
+    
+    func continueOperation() {
+        if leftNumber != 0 && rightNumber != 0 {
+            self.buttonEqualsPressed(equalsButton)
+            displayLabel.text = ""
+        }
     }
     
     
