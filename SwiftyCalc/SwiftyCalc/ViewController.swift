@@ -42,13 +42,23 @@ class ViewController: UIViewController {
         print(leftNumber, rightNumber)
     }
     
-    
     @IBAction func buttonOperatorPressed(sender: UIButton) {
         print(sender.currentTitle)
         currentOperator = sender.currentTitle!
-        displayLabel.text = ""
+        if currentOperator == "±" {
+            result = leftNumber * -1
+            leftNumber = result
+            displayLabel.text = (String(format: "%f", result))
+            print(displayLabel.text)
+        }
+        else if currentOperator == "%" {
+            result = leftNumber / 100
+            leftNumber = result
+            displayLabel.text = (String(format: "%f", result))
+        } else {
+         displayLabel.text = ""
+        }
     }
-    
     
     @IBAction func buttonEqualsPressed(sender: UIButton) {
         print("=")
@@ -58,6 +68,14 @@ class ViewController: UIViewController {
         }
         if currentOperator == "-" {
             result = leftNumber - rightNumber
+            leftNumber = result
+        }
+        if currentOperator == "X" {
+            result = leftNumber * rightNumber
+            leftNumber = result
+        }
+        if currentOperator == "÷" {
+            result = leftNumber / rightNumber
             leftNumber = result
         }
         print(leftNumber, rightNumber)
