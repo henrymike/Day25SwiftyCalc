@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var displayLabel :UILabel!
     var currentOperator :NSString!
     
-    var leftNumber : Float = 0;
-    var rightNumber : Float = 0;
-    var result : Float = 0;
+    var leftNumber = 0.0;
+    var rightNumber = 0.0;
+    var result = 0.0;
     
     //MARK: - Interactivity Methods
     
@@ -29,12 +30,20 @@ class ViewController: UIViewController {
         leftNumber = 0
         rightNumber = 0
         result = 0
+        currentOperator = ""
     }
     
     @IBAction func button1Pressed(sender: UIButton) {
         print("1")
         leftNumber = 1
-        
+        if currentOperator == "" {
+            leftNumber = Double(displayLabel.text!)!
+        } else {
+            rightNumber = Double(displayLabel.text!)!
+        }
+//        currentOperator == "" ? leftNumber = (Float(format: "%f", displayLabel.text!)) : rightNumber = 0
+//        currentOperator == "" ? leftNumber = "displayLabel.text".floatValue : rightNumber = "displayLabel.text".floatValue
+        print(leftNumber, rightNumber)
     }
     
     @IBAction func button2Pressed(sender: UIButton) {
