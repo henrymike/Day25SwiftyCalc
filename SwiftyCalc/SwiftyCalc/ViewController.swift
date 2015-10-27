@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var displayLabel :UILabel!
     @IBOutlet weak var equalsButton :UIButton!
+    @IBOutlet weak var decimalButton :UIButton!
     
     var currentOperator = ""
     var leftNumber = 0.0
@@ -44,6 +45,16 @@ class ViewController: UIViewController {
         }
         displayLabel.text = displayLabel.text! + sender.currentTitle!
         print(displayLabel.text)
+        //TODO: Fix decimal statement
+        let decimal = ".."
+        switch decimal {
+        case "..":
+            decimalButton.enabled = false
+            print("Decimal disabled")
+        default:
+            decimalButton.enabled = true
+        }
+        
         if currentOperator == "" {
             leftNumber = Double(displayLabel.text!)!
         } else {
